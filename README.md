@@ -19,15 +19,18 @@
 - 랜덤 값은 ArrayList<Integer>로 반환한다. (get)
 - camp.nextstep.edu.missionutils.Randoms의 pickNumberInRange()를 이용하여 랜덤 값을 생성한다.
 
-### Referee
-- RandomNumberGenerator에서 생성한 난수와 Player가 입력한 수의 게임 결과를 판별한다.
+###  ✅ Referee
+- RandomNumberGenerator에서 생성한 난수와 Player가 입력한 수의 게임 결과(GameResult)를 판별한다.
 
-### Player
+### ✅ Player
+- player가 입력한 글자의 수를 검사하는 함수가 포함된다.
+- player가 입력한 글자의 중복 값을 검사하는 함수가 포함된다.
+- player가 입력한 글자가 숫자인지 검사하는 함수가 포함된다.
 
 ### GameState
 - Restart, Quit의 값이 존재한다.
 
-### MatchType
+### ✅ MatchType
 - Strike, Ball, Nothing의 값의 존재한다.
 
 ### ✅ GameRule
@@ -35,10 +38,11 @@
 - 제일 작은 수는 1이다.
 - 제일 큰 수는 9이다.
 
-### GameResult
+### ✅ GameResult
 - Map<MatchType, Integer> 형태의 값을 리턴한다.
+- Type에 따라 값을 갱신하는 함수를 만든다.
 
-### UserInputView
+### ✅ UserInputView
 - camp.nextstep.edu.missionutils.Console의 readLine()을 이용해서 사용자가 입력하는 값을 얻는다.
 
 ### Announcer
@@ -48,7 +52,11 @@
   - 3개의 숫자를 모두 맞히셨습니다! 게임종료
 - GameResult를 출력한다. 
   - [예] 1볼 1스트라이크
-- 게임의 진행중 에러를 출력한다. 
-  - [예] [ERROR] 3자리의 숫자만 입력할 수 있습니다.
+
+### ✅ WrongPlayerNumberException
+- Player에게 숫자를 입력받을 때 발생할 수 있는 예외를 만든다.
+- 글자수가 초과되었을 경우
+- 중복값이 있을 경우
+- 숫자가 아닌 경우
 
 ### GameController
