@@ -27,7 +27,7 @@
 - player가 입력한 글자의 중복 값을 검사하는 함수가 포함된다.
 - player가 입력한 글자가 숫자인지 검사하는 함수가 포함된다.
 
-### GameState
+### ✅ GameState
 - Restart, Quit의 값이 존재한다.
 
 ### ✅ MatchType
@@ -45,18 +45,16 @@
 ### ✅ UserInputView
 - camp.nextstep.edu.missionutils.Console의 readLine()을 이용해서 사용자가 입력하는 값을 얻는다.
 
-### Announcer
-- 게임의 진행글을 출력한다. 
-  - 숫자를 입력해주세요 :
-  - 게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요
-  - 3개의 숫자를 모두 맞히셨습니다! 게임종료
-- GameResult를 출력한다. 
-  - [예] 1볼 1스트라이크
-
 ### ✅ WrongPlayerNumberException
 - Player에게 숫자를 입력받을 때 발생할 수 있는 예외를 만든다.
 - 글자수가 초과되었을 경우
 - 중복값이 있을 경우
 - 숫자가 아닌 경우
 
-### GameController
+### ✅ GameRunner
+- 게임 한판을 실행
+
+### ✅ OpinitionInput
+- 게임을 계속할 것인지 Player에게 의견을 받는다.
+- 받은 의견이 유효한 의견인지 검증하는 함수를 만든다.
+
