@@ -26,4 +26,21 @@ public class GameResult {
     public int getBallCnt() {
         return gameResult.get(MatchType.Ball);
     }
+
+    public String printGameResult() {
+        String resultWord = "";
+        if (getBallCnt() > 0) {
+            resultWord += getBallCnt() + MatchType.BALL_WORD + " ";
+        }
+
+        if (getStrikeCnt() > 0) {
+            resultWord += getStrikeCnt() + MatchType.STRIKE_WORD + " ";
+        }
+
+        if (resultWord.length() == 0) {
+            return MatchType.NOTHING_WORD;
+        }
+
+        return resultWord;
+    }
 }
