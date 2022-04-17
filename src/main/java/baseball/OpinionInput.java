@@ -3,12 +3,13 @@ package baseball;
 public class OpinionInput {
     public static final String GAME_COMMAND = "게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요";
 
-    public GameState getOpinition() {
-        String userinput = "";
+    public GameState getOpinition() throws IllegalArgumentException {
 
-        while (!checkUserOpinionValidate(userinput)) {
-            System.out.println(GAME_COMMAND);
-            userinput = UserInputView.getUserInput();
+        System.out.println(GAME_COMMAND);
+        String userinput = UserInputView.getUserInput();
+
+        if (!checkUserOpinionValidate(userinput)) {
+            throw new IllegalArgumentException(IllegalArgumentException.MSG_GAME_STATE_CODE);
         }
 
         return GameState.getGameStateOf(Integer.parseInt(userinput));

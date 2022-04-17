@@ -7,24 +7,24 @@ import java.util.Set;
 public class Player {
     private final ArrayList<Integer> playerNumbers;
 
-    Player(String userinput) throws WrongPlayerNumberException {
+    Player(String userinput) throws IllegalArgumentException {
         checkPlayerNumberStr(userinput);
 
         playerNumbers = convertStringToArrayInteger(userinput);
     }
 
-    public static boolean checkPlayerNumberStr(String str) throws WrongPlayerNumberException {
+    public static boolean checkPlayerNumberStr(String str) throws IllegalArgumentException {
         return checkInputLength(str)  && checkDuplicate(str) && checkNumberValidate(str);
     }
 
-    private static boolean checkInputLength(String str) throws WrongPlayerNumberException {
+    private static boolean checkInputLength(String str) throws IllegalArgumentException {
         if(str.length() == GameRule.MAX_LENGTH) {
             return true;
         }
-        throw new WrongPlayerNumberException(WrongPlayerNumberException.MSG_INPUT_LENGTH);
+        throw new IllegalArgumentException(IllegalArgumentException.MSG_INPUT_LENGTH);
     }
 
-    private static boolean checkDuplicate(String str) throws WrongPlayerNumberException {
+    private static boolean checkDuplicate(String str) throws IllegalArgumentException {
         Set<Character> checkStrSet = new HashSet<>();
         char[] charArr = str.toCharArray();
 
@@ -33,19 +33,19 @@ public class Player {
         }
 
         if (checkStrSet.size() != GameRule.MAX_LENGTH) {
-            throw new WrongPlayerNumberException(WrongPlayerNumberException.MSG_DUPLICATE_VALUE);
+            throw new IllegalArgumentException(IllegalArgumentException.MSG_DUPLICATE_VALUE);
         }
 
         return true;
     }
 
-    private static boolean checkNumberValidate(String str) throws WrongPlayerNumberException {
+    private static boolean checkNumberValidate(String str) throws IllegalArgumentException {
         String regex = String.format("[%d-%d]{%d}", GameRule.MIN_VALUE, GameRule.MAX_VALUE, GameRule.MAX_LENGTH);
 
         if (str.matches(regex)) {
             return true;
         }
-        throw new WrongPlayerNumberException(WrongPlayerNumberException.MSG_NUMBER_VALIDATE);
+        throw new IllegalArgumentException(IllegalArgumentException.MSG_NUMBER_VALIDATE);
     }
 
     private ArrayList<Integer> convertStringToArrayInteger(String userStr) {

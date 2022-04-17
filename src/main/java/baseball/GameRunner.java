@@ -11,7 +11,7 @@ public class GameRunner {
         randomNums = new RandomNumbersGenerator().getRandomNumbers();
     }
 
-    public void run() {
+    public void run() throws IllegalArgumentException {
         GameResult result = tryToGuess(randomNums);
         System.out.println(result.printGameResult());
 
@@ -24,23 +24,10 @@ public class GameRunner {
 
     }
 
-    private boolean checkUserInputStr(String str) {
-        try {
-            return Player.checkPlayerNumberStr(str);
-        } catch (WrongPlayerNumberException e) {
-            System.out.println(e.getMessage());
-            return false;
-        }
-    }
+    private GameResult tryToGuess(ArrayList<Integer> randoms) throws IllegalArgumentException {
 
-    private GameResult tryToGuess(ArrayList<Integer> randoms) {
-        boolean isUserinputValid = false;
-        String userinput = "";
-        while(!isUserinputValid) {
-            System.out.print(PLEASE_INPUT_NUMBERS);
-            userinput = UserInputView.getUserInput();
-            isUserinputValid = checkUserInputStr(userinput);
-        }
+        System.out.print(PLEASE_INPUT_NUMBERS);
+        String userinput = UserInputView.getUserInput();
 
         return new Referee(randoms, new Player(userinput).getPlayerNumbers()).getGameResult();
     }
