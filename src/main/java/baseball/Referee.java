@@ -15,13 +15,13 @@ public class Referee {
 
     private void addBallType(int randomNumIndex, Integer playerNum, ArrayList<Integer> randomNums) {
         if ((randomNums.get(randomNumIndex).intValue() != playerNum.intValue()) && randomNums.contains(playerNum)) {
-            gameResult.updateResultType(MatchType.Ball);
+            gameResult.updateResultType(MatchType.BALL);
         }
     }
 
     private void addStrikeType(Integer randomNum, Integer playerNum) {
         if (randomNum.intValue() == playerNum.intValue()){
-            gameResult.updateResultType(MatchType.Strike);
+            gameResult.updateResultType(MatchType.STRIKE);
         }
     }
 

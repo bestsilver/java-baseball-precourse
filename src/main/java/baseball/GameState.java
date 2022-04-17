@@ -1,17 +1,17 @@
 package baseball;
 
 public enum GameState {
-    restart, quit;
-    public static final int RESERT = 1;
-    public static final int QUIT = 2;
+    RESTART, QUIT;
+    public static final int RESTART_VALUE = 1;
+    public static final int QUIT_VALUE = 2;
 
     public static GameState getGameStateOf(int num) {
         if (num == 1) {
-            return restart;
+            return RESTART;
         }
 
         if (num == 2) {
-            return quit;
+            return QUIT;
         }
 
         return null;
