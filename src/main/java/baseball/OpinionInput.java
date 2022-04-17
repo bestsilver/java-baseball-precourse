@@ -3,7 +3,7 @@ package baseball;
 public class OpinionInput {
     public static final String GAME_COMMAND = "게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요";
 
-    public GameState getOpinition() throws IllegalArgumentException {
+    public GameState getOpinion() throws IllegalArgumentException {
 
         System.out.println(GAME_COMMAND);
         String userinput = UserInputView.getUserInput();

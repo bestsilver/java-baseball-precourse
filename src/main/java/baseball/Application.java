@@ -1,7 +1,5 @@
 package baseball;
 
-import java.util.ArrayList;
-
 public class Application {
     public static void main(String[] args) {
         // TODO: 프로그램 구현
@@ -10,7 +8,7 @@ public class Application {
         while (opinion == GameState.restart) {
             GameRunner runner = new GameRunner();
             runner.run();
-            opinion = new OpinionInput().getOpinition();
+            opinion = new OpinionInput().getOpinion();
         }
 
     }

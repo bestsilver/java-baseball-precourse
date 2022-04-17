@@ -16,16 +16,15 @@
 - 각 자리는 1~9까지의 수로 이루어져 있다. 
 - 각 자리는 서로 다른 수로 이루어져 있다.
 - 3자리 수보다 적거나 많은 자리의 수는 허용하지 않는다.
-- 랜덤 값은 ArrayList<Integer>로 반환한다. (get)
 - camp.nextstep.edu.missionutils.Randoms의 pickNumberInRange()를 이용하여 랜덤 값을 생성한다.
 
 ###  ✅ Referee
 - RandomNumberGenerator에서 생성한 난수와 Player가 입력한 수의 게임 결과(GameResult)를 판별한다.
 
 ### ✅ Player
-- player가 입력한 글자의 수를 검사하는 함수가 포함된다.
-- player가 입력한 글자의 중복 값을 검사하는 함수가 포함된다.
-- player가 입력한 글자가 숫자인지 검사하는 함수가 포함된다.
+- player가 입력한 글자의 수를 검사한다.
+- player가 입력한 글자의 중복 값을 검사한다.
+- player가 입력한 글자가 숫자인지 검사한다.
 
 ### ✅ GameState
 - Restart, Quit의 값이 존재한다.
@@ -54,7 +53,7 @@
 ### ✅ GameRunner
 - 게임 한판을 실행
 
-### ✅ OpinitionInput
+### ✅ OpinionInput
 - 게임을 계속할 것인지 Player에게 의견을 받는다.
 - 받은 의견이 유효한 의견인지 검증하는 함수를 만든다.
 
