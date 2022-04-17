@@ -2,7 +2,10 @@ package baseball;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertFalse;
+
+import java.io.ByteArrayInputStream;
+
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class OpinionInputTest {
 
@@ -15,8 +18,12 @@ public class OpinionInputTest {
     public void checkPlayerOpinionValidateTest() {
         String opinion = "3";
 
-        assertFalse(opinionInput.checkUserOpinionValidate(opinion));
-
+        assertThatThrownBy(() -> {
+            System.setIn(new ByteArrayInputStream(opinion.getBytes()));
+            opinionInput.getOpinion();
+        })
+        .isInstanceOf(IllegalArgumentException.class)
+        .hasMessage(IllegalArgumentException.MSG_GAME_STATE_CODE);
     }
 
 }
