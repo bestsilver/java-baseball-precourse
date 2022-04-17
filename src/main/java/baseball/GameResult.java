@@ -8,9 +8,9 @@ public class GameResult {
 
      GameResult() {
         gameResult = new HashMap<>();
-        gameResult.put(MatchType.Strike, 0);
-        gameResult.put(MatchType.Ball, 0);
-        gameResult.put(MatchType.Nothing, 0);
+        gameResult.put(MatchType.STRIKE, 0);
+        gameResult.put(MatchType.BALL, 0);
+        gameResult.put(MatchType.NOTHING, 0);
     }
 
     public void updateResultType(MatchType match) {
@@ -20,11 +20,11 @@ public class GameResult {
     }
 
     public int getStrikeCnt() {
-        return gameResult.get(MatchType.Strike);
+        return gameResult.get(MatchType.STRIKE);
     }
 
     public int getBallCnt() {
-        return gameResult.get(MatchType.Ball);
+        return gameResult.get(MatchType.BALL);
     }
 
     public String printGameResult() {

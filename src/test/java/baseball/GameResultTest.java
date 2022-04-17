@@ -14,8 +14,8 @@ public class GameResultTest {
 
     @Test
     public void matchAlrightGameScore() {
-        gameResult.updateResultType(MatchType.Strike);
-        gameResult.updateResultType(MatchType.Ball);
+        gameResult.updateResultType(MatchType.STRIKE);
+        gameResult.updateResultType(MatchType.BALL);
 
         assertEquals(1, gameResult.getStrikeCnt());
         assertEquals(1, gameResult.getBallCnt());
@@ -23,9 +23,9 @@ public class GameResultTest {
 
     @Test
     public void matchAlrightGameScorePrint() {
-        gameResult.updateResultType(MatchType.Strike);
-        gameResult.updateResultType(MatchType.Strike);
-        gameResult.updateResultType(MatchType.Ball);
+        gameResult.updateResultType(MatchType.STRIKE);
+        gameResult.updateResultType(MatchType.STRIKE);
+        gameResult.updateResultType(MatchType.BALL);
 
         assertEquals("1볼 2스트라이크 ", gameResult.printGameResult());
     }
