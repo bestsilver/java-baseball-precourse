@@ -13,18 +13,18 @@ public class Player {
         playerNumbers = convertStringToArrayInteger(userinput);
     }
 
-    public static boolean checkPlayerNumberStr(String str) throws IllegalArgumentException {
+    private boolean checkPlayerNumberStr(String str) throws IllegalArgumentException {
         return checkInputLength(str)  && checkDuplicate(str) && checkNumberValidate(str);
     }
 
-    private static boolean checkInputLength(String str) throws IllegalArgumentException {
+    private boolean checkInputLength(String str) throws IllegalArgumentException {
         if(str.length() == GameRule.MAX_LENGTH) {
             return true;
         }
         throw new IllegalArgumentException(IllegalArgumentException.MSG_INPUT_LENGTH);
     }
 
-    private static boolean checkDuplicate(String str) throws IllegalArgumentException {
+    private boolean checkDuplicate(String str) throws IllegalArgumentException {
         Set<Character> checkStrSet = new HashSet<>();
         char[] charArr = str.toCharArray();
 
@@ -39,7 +39,7 @@ public class Player {
         return true;
     }
 
-    private static boolean checkNumberValidate(String str) throws IllegalArgumentException {
+    private boolean checkNumberValidate(String str) throws IllegalArgumentException {
         String regex = String.format("[%d-%d]{%d}", GameRule.MIN_VALUE, GameRule.MAX_VALUE, GameRule.MAX_LENGTH);
 
         if (str.matches(regex)) {

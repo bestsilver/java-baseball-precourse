@@ -3,9 +3,9 @@ package baseball;
 import java.util.ArrayList;
 
 public class GameRunner {
-    ArrayList<Integer> randomNums;
-    public final String PLEASE_INPUT_NUMBERS = "숫자를 입력해주세요 : ";
-    public final String VICTORY_WORD = "3개의 숫자를 모두 맞히셨습니다! 게임 종료";
+    private ArrayList<Integer> randomNums;
+    public static final String PLEASE_INPUT_NUMBERS = "숫자를 입력해주세요 : ";
+    public static final String VICTORY_WORD = "3개의 숫자를 모두 맞히셨습니다! 게임 종료";
 
     GameRunner() {
         randomNums = new RandomNumbersGenerator().getRandomNumbers();

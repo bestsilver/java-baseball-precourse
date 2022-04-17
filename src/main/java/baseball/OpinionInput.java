@@ -15,8 +15,8 @@ public class OpinionInput {
         return GameState.getGameStateOf(Integer.parseInt(userinput));
     }
 
-    public boolean checkUserOpinionValidate(String opinion) {
-        String regexStr = String.format("%s|%s", GameState.RESERT, GameState.QUIT);
+    private boolean checkUserOpinionValidate(String opinion) {
+        String regexStr = String.format("%s|%s", GameState.RESTART_VALUE, GameState.QUIT_VALUE);
         return opinion.matches(regexStr);
     }
 }
