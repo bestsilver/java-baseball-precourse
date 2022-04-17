@@ -2,10 +2,9 @@ package baseball;
 
 public class Application {
     public static void main(String[] args) {
-        // TODO: 프로그램 구현
-        GameState opinion = GameState.restart;
+        GameState opinion = GameState.RESTART;
 
-        while (opinion == GameState.restart) {
+        while (opinion == GameState.RESTART) {
             GameRunner runner = new GameRunner();
             runner.run();
             opinion = new OpinionInput().getOpinion();
