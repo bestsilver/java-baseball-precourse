@@ -45,7 +45,7 @@
 ### ✅ UserInputView
 - camp.nextstep.edu.missionutils.Console의 readLine()을 이용해서 사용자가 입력하는 값을 얻는다.
 
-### ✅ WrongPlayerNumberException
+### ✅ IllegalArgumentException
 - Player에게 숫자를 입력받을 때 발생할 수 있는 예외를 만든다.
 - 글자수가 초과되었을 경우
 - 중복값이 있을 경우
