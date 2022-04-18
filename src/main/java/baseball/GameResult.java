@@ -27,20 +27,44 @@ public class GameResult {
         return gameResult.get(MatchType.BALL);
     }
 
+    public String printStrikeResult() {
+         String resultWord = "";
+
+         if (getStrikeCnt() > 0) {
+             resultWord += getStrikeCnt() + MatchType.STRIKE_WORD;
+         }
+
+         return resultWord;
+    }
+
+    public String printBallResult() {
+         String resultWord = "";
+
+         if (getBallCnt() > 0) {
+             resultWord += getBallCnt() + MatchType.BALL_WORD;
+         }
+
+         return resultWord;
+    }
+
+    public String printNothingResult() {
+         String resultWord = "";
+
+         if (getBallCnt() + getStrikeCnt() == 0) {
+             resultWord = MatchType.NOTHING_WORD;
+         }
+
+         return resultWord;
+    }
+
     public String printGameResult() {
         String resultWord = "";
-        if (getBallCnt() > 0) {
-            resultWord += getBallCnt() + MatchType.BALL_WORD + " ";
+
+        if (getBallCnt() + getStrikeCnt() > 0) {
+            resultWord += printBallResult() + " " + printStrikeResult();
+            return resultWord.trim();
         }
 
-        if (getStrikeCnt() > 0) {
-            resultWord += getStrikeCnt() + MatchType.STRIKE_WORD + " ";
-        }
-
-        if (resultWord.length() == 0) {
-            return MatchType.NOTHING_WORD;
-        }
-
-        return resultWord;
+        return printNothingResult();
     }
 }
